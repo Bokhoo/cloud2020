@@ -27,4 +27,11 @@ public class OrderFeignController {
 
     }
 
+    @GetMapping(value = "/consumer/payment/feign/timout")
+    public String paymentFeignTimeout(){
+        // openfeign--底层--ribbon客户端一般默认等待1秒,,但是等待了三秒钟
+        // feign.RetryableException: Read timed out executing GET http://CLOUD-PAYMENT-SERVICE/payment/feign/timout
+        return paymentFeignService.paymentFeignTimeout();
+    }
+
 }
