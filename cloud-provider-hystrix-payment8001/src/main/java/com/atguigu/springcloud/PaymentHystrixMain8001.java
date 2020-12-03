@@ -8,8 +8,6 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
-import java.util.UUID;
-
 /**
  * @author zbh
  * @date 2020/12/1
@@ -36,9 +34,6 @@ public class PaymentHystrixMain8001 {
         registrationBean.setLoadOnStartup(1);
         registrationBean.addUrlMappings("/hystrix.stream");
         registrationBean.setName("HystrixMetricsStreamServlet");
-
         return registrationBean;
-
-
     }
 }
