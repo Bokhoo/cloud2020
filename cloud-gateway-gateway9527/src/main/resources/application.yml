@@ -31,6 +31,8 @@ spring:
         - id: payment_routh2
           #uri: http://localhost:8001
           uri: lb://CLOUD-PAYMENT-SERVICE
+          #filters:
+            #- AddRequestParameter=X-Request-Id,1024 # 过滤器工厂会在匹配的请求头上添加一对请求名称为X-Request-Id值为1024
           predicates:
             - Path=/payment/lb/**   #断言,路径相匹配的进行路由
             - Cookie=username,zzyy #必须携带cookie:curl http://localhost:9527/payment/lb --cookie "username=zzyy"
