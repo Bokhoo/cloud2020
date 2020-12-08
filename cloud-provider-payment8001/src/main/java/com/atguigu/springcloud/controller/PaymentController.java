@@ -30,6 +30,11 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin(){
+        return "hi ,i'am payment zipkin server fall back，welcome to atguigu，O(∩_∩)O哈哈~";
+    }
+
     @PostMapping("/payment/create")
     public CommonResult<Payment> create(@RequestBody Payment payment){
 
